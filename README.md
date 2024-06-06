@@ -97,9 +97,9 @@ o = ssam.get_scene_embeddings(x)
 ---
 
 # Pretraining
-Pretraining code is included in the release. Any model configuration (for instance, `mamba_ssast_tiny_200_16x4`) was trained with the following command:
+Pretraining code is included in the release. Any model configuration (for instance, `ssam_tiny_200_16x4`) was trained with the following command:
 ```shell
-torchrun --standalone --nnodes=1 --nproc-per-node=4 train.py --config configs.poc.mamba_ssast_tiny_200_16x4 --workdir $EXP_DIR/mamba_ssast_base_200_16x4_4x256_fp16_r1 --precision float16 --print_freq 50 --num_workers 16 --no_wandb
+torchrun --standalone --nnodes=1 --nproc-per-node=4 train.py --config configs.poc.ssam_tiny_200_16x4 --workdir $EXP_DIR/ssam_tiny_200_16x4_4x256_fp16_r1 --precision float16 --print_freq 50 --num_workers 16 --no_wandb
 ```
 We use a `torchdata` based datapipe for data loading, operating on precomputed log melspectrogram features stored in webdataset archive(s). You can adapt the data loading for your own use case.
 
