@@ -60,10 +60,10 @@ This also prepares a `todo_audioset` directory in OUTPUT_DIR, which is setting u
 
 After extracting features, to run downstream experiment on a specific config, use the following command:
 ```shell
-./downstream_experiments.sh mamba_ssast_base_200_16x4 $OUTPUT_DIR
+./downstream_experiments.sh ssam_tiny_200_16x4 $OUTPUT_DIR
 ```
 
-This will run downstream experiments on all the extracted features for mamba_ssast_base_200_16x4 on 10 random seeds.
+This will run downstream experiments on all the extracted features for the tiny SSAM configuration on 10 random seeds.
 
 ## Get results
 Finally, you can run the following script to get results of downstream experiments of the two models

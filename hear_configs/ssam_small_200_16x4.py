@@ -6,10 +6,10 @@ from importlib import import_module
 PT_MAMBA_MODEL_DIR = os.environ.get("PT_MAMBA_MODEL_DIR")
 
 
-config_path = "configs.mamba_ssast_small_200_16x4"
+config_path = "configs.ssam_small_200_16x4"
 precision = "float16"
 RUN_ID = 1
-model_path = os.path.join(PT_MAMBA_MODEL_DIR, f"mamba_ssast_small_200_16x4_4x256_fp16_r{RUN_ID}")
+model_path = os.path.join(PT_MAMBA_MODEL_DIR, f"ssam_small_200_16x4_4x256_fp16_r{RUN_ID}")
 
 
 def load_model(model_path=model_path, config=import_module(config_path).get_config()):
