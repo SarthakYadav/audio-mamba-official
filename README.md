@@ -29,6 +29,12 @@ pip install -r hear-eval-kit/requirements.txt
 
 # install hear-eval-kit, WITHOUT AUTO DEPS
 cd external_sources/hear-eval-kit && pip install --no-deps . && cd -
+
+# install causal-conv1d (optional)
+pip install causal-conv1d>=1.2.0
+
+# install mamba-ssm
+pip install mamba-ssm==1.1.3
 ```
 
 ## Get 16000 Hz data from hear
