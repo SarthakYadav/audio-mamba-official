@@ -22,19 +22,21 @@ Follow these steps
 conda create -n mamba-env python=3.10 -y
 conda activate mamba-env
 
+pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
+
 pip install -r requirements.txt
 
 # install hear-eval-kit specific requirements
-pip install -r hear-eval-kit/requirements.txt
+pip install -r external_sources/hear-eval-kit/requirements.txt
 
 # install hear-eval-kit, WITHOUT AUTO DEPS
 cd external_sources/hear-eval-kit && pip install --no-deps . && cd -
 
-# install causal-conv1d (optional)
-pip install causal-conv1d>=1.2.0
+# install causal-conv1d
+pip install git+https://github.com/Dao-AILab/causal-conv1d.git@v1.1.3.post1
 
 # install mamba-ssm
-pip install mamba-ssm==1.1.3
+pip install git+https://github.com/state-spaces/mamba.git@v1.1.3.post1
 ```
 
 ## Get 16000 Hz data from hear
@@ -60,7 +62,7 @@ This also prepares a `todo_audioset` directory in OUTPUT_DIR, which is setting u
 
 After extracting features, to run downstream experiment on a specific config, use the following command:
 ```shell
-./downstream_experiments.sh ssam_tiny_200_16x4 $OUTPUT_DIR
+./downstream_experiments.sh ssam_tiny_200_16x4 $OUTPUT_DIR/todo_audioset
 ```
 
 This will run downstream experiments on all the extracted features for the tiny SSAM configuration on 10 random seeds.
@@ -83,10 +85,10 @@ import torchaudio
 from hear_api import RuntimeSSAST
 from importlib import import_module
 config = import_module("configs.ssam_tiny_200_16x4").get_config()
-ssam = RuntimeSSAST(config, "path/to/pretrained/weights").cuda()
+ssam = RuntimeSSAST(config, "path/to/pretrained_dir").cuda()
 
 # alternatively just use the following if you have the paths setup right
-# ssam = import_module("configs.ssam_tiny_200_16x4").load_model().cuda()
+# ssam = import_module("hear_configs.ssam_tiny_200_16x4").load_model().cuda()
 
 x, sr = torchaudio.load("path/to/audio.wav")
 x = x.cuda()

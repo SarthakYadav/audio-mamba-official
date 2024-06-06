@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 export pretrain_ds=audioset
 tasks_dir=$1
 output_dir=$2

@@ -23,8 +23,7 @@ except ImportError:
 
 
 __all__ = [
-    "MambaSSAST", "mamba_ssast_tiny", "mamba_ssast_small", "mamba_ssast_medium", "mamba_ssast_base", "mamba_ssast_large", "mamba_ssast_huge",
-    "mamba_ssast_tiny_x2", "mamba_ssast_small_x2", "mamba_ssast_medium_x2", "mamba_ssast_base_x2", "mamba_ssast_large_x2", "mamba_ssast_huge_x2"
+    "MambaSSAST", "mamba_ssast_tiny", "mamba_ssast_small", "mamba_ssast_medium", "mamba_ssast_base", "mamba_ssast_large", "mamba_ssast_huge"
 ]
 
 

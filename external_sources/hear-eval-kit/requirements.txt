@@ -15,5 +15,4 @@ python-slugify
 sed_eval
 soundfile
 spotty
-numba==0.56.4
 torchinfo
