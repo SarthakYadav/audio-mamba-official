@@ -82,11 +82,11 @@ import torchaudio
 
 from hear_api import RuntimeSSAST
 from importlib import import_module
-config = import_module("configs.mamba_ssast_base_200_16x4").get_config()
+config = import_module("configs.ssam_tiny_200_16x4").get_config()
 ssam = RuntimeSSAST(config, "path/to/pretrained/weights").cuda()
 
 # alternatively just use the following if you have the paths setup right
-# ssam = import_module("configs.mamba_ssast_base_200_16x4").load_model().cuda()
+# ssam = import_module("configs.ssam_tiny_200_16x4").load_model().cuda()
 
 x, sr = torchaudio.load("path/to/audio.wav")
 x = x.cuda()
