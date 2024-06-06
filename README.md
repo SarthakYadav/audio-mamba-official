@@ -2,7 +2,7 @@
 This is the official repository for our paper ["Audio Mamba: Selective State Spaces for Self-Supervised Audio Representations"](https://arxiv.org/abs/2406.02178), set to appear in Proc. INTERSPEECH 2024. 
 
 # Contents
-* [Pre-trained weights for the default Self-Supervised Audio Mamba (SSAM) configurations]()
+* [Pre-trained weights for the default Self-Supervised Audio Mamba (SSAM) configurations](https://drive.google.com/drive/folders/1l6_8e1TFEfnobwUMIbA7-aKw2FwlBhho?usp=drive_link)
 * Our local copy of [hear-eval-kit](external_sources/hear-eval-kit) for easy downstream reproducibility. Original can be found [here](https://github.com/hearbenchmark/hear-eval-kit)
 * [Feature extraction API](hear_api) compatible with the [hear-eval-kit](https://github.com/hearbenchmark/hear-eval-kit) format for extracting features.
 * Code used to train the SSAM models.
